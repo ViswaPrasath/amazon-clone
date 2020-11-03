@@ -1,0 +1,80 @@
+<nav>
+    <menu>
+        <div class="logo">
+            <i class='bx bx-menu' (click)="sideMenuStatus()"></i>
+             <a routerLink="/">
+                <img src="assets/img/amazon_logo.png"  alt="amazon logo"> 
+            </a>
+        </div>
+        <div class="search">
+            <input type="text" />
+            <i class='bx bx-search' ></i>
+        </div>
+        <ul class="header__options">
+            <li>
+                <a routerLink="/login">
+                    <strong>Hello,</strong>   
+                    <span>   {{userName}}</span>
+                </a> 
+           </li>
+ 
+            <li>
+                <a href="">
+                    <strong>Returns</strong>  
+                    <span> & orders</span> 
+                </a>    
+            </li>
+
+            <li>
+                <a href="">
+                    <strong>Try</strong> <br> <span>prime</span>
+                </a>
+             </li>
+
+            <li>
+                <a routerLink="/cart">
+                    <i class='bx bxs-cart bx-sm'></i> <span>{{itemInCart}}</span>
+                </a>
+            </li>
+        </ul>
+    </menu>
+</nav>
+
+<div class="menu_mask" *ngIf="showSideMenu">
+
+</div>
+
+<div class="menu_container" *ngIf="showSideMenu"> 
+    <h4>Hello</h4>
+    <i class='bx bx-x' (click)="sideMenuStatus()"></i>
+    <ul class="menu">
+        <li class="menu_item"> 
+            <a href="">
+                Shop By Cateory
+            </a>
+        </li>
+        <li class="menu_item"> 
+            <a href="">
+                Today's Deal
+            </a>
+        </li>
+        <li class="menu_item">
+            <a href="">
+                Notification 
+            </a>
+        </li>
+        <li class="menu_item"> 
+            <a href="">
+                Legal
+            </a>
+        </li>
+        <li class="menu_item"> 
+            <a *ngIf="this.userName != 'Guest'" routerLink="/" (click)="signOut()">
+                Sign Out
+            </a>
+            <a *ngIf="this.userName == 'Guest'" routerLink="/login">
+                Sign in
+            </a>
+        </li>
+    </ul>
+</div>

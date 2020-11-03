@@ -1,0 +1,26 @@
+<main>
+    <div class="product_section">
+        <h2>Shopping Cart</h2>
+        <div class = "product" *ngFor="let product of productsSelected">
+            <div class="product_img_container">
+                <img [src]="product.image" [alt]="product.name">
+            </div>
+            <div class="product_details_container">
+                <p> {{product.description}}</p>
+                <span> ₹ {{product.price}}</span>
+                <br>
+                <button (click)="removeFromCart(product.id)">Remove From cart</button>
+            </div>
+         </div>
+         <p *ngIf="productsSelected.length == 0" class="product_placeholder">No products in cart</p>
+    </div>
+   <div class="checkout_section">
+     <img src="../../assets/img/checkout_banner.png" alt="">
+     <div class="sub_total_section">
+         <h2>Subtotal </h2> 
+         <small>({{productCount}} items)</small>
+         <h3>₹{{productPrice}}</h3>
+         <button>Proceed to buy</button>
+     </div>
+   </div>
+</main>

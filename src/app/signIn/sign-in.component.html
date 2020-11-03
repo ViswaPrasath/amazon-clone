@@ -1,0 +1,51 @@
+<main>
+    <div class="logo">
+       <img src="../../assets/img/amazon_logo_signin.png" alt="">
+    </div>
+    <section>
+        <h2>Create Account</h2>
+        <form (submit)="createUser(form)" #form="ngForm">
+            <label for="your name">Your Name</label>
+            <input
+             type="text" 
+             name="yourName" 
+             placeholder="Your name"
+             #yourName="ngModel"
+             ngModel
+             required/>
+             <span *ngIf="yourName.invalid && yourName.touched" class="error">Check the name</span>
+            <label for="mobile no.">Mobile no.</label>
+            <input 
+             type="number" 
+             name="mobileNo"
+             placeholder="Mobile No"
+             #mobileNo = "ngModel"
+             ngModel
+             required
+             maxlength = "10"/>
+             <span *ngIf="mobileNo.invalid && mobileNo.touched" class="error">Check the mobileNo</span>
+            <label for="email id">Email id</label>
+            <input
+             type="email"
+             name="emailId" 
+             placeholder="Email Id"
+             #emailId = "ngModel"
+             ngModel
+             required/>
+             <span *ngIf="emailId.invalid && emailId.touched" class="error">Check the email Id</span>
+            <label for="password">Password</label>
+            <input 
+              type="password" 
+              name="password" 
+              placeholder="Password"
+              #password = "ngModel"
+              ngModel
+              required
+              maxlength = "8"/>
+             <span *ngIf="password.invalid && password.touched" class="error">Check the password</span>
+            <button type="submit">Create Account</button>
+        </form>
+        <p>We will send you a text to verify your phone.
+            Message and Data rates may apply.</p>
+    </section>
+</main>

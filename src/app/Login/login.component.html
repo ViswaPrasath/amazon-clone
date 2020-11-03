@@ -1,0 +1,33 @@
+<main>
+    <div class="logo">
+       <img src="../../assets/img/amazon_logo_signin.png" alt="">
+    </div>
+    <section>
+        <h2>Login</h2>
+        <form (submit)="login(form)" #form="ngForm">
+            <label for="emailId">Email Id</label>
+            <input
+             type="text" 
+             name="emailId" 
+             placeholder="Email Id"
+             #emailId="ngModel"
+             ngModel
+             required/>
+             <span *ngIf="emailId.invalid && emailId.touched" class="error">Check the email Id</span>
+            <label for="password">Password</label>
+            <input 
+             type="password" 
+             name="password"
+             placeholder="Password"
+             #password = "ngModel"
+             ngModel
+             required
+            />
+            <span *ngIf="password.invalid && password.touched" class="error">Check the password</span>
+            <button type="submit">Login</button>
+        </form>
+        <p>We will send you a text to verify your phone.
+            Message and Data rates may apply.</p>
+        <a routerLink="/signin">Create Account</a>  
+    </section>
+</main>

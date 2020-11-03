@@ -1,0 +1,34 @@
+<div class="home_banner_container">
+         <img src="assets/img/homeBanner.jpg" alt="home_banner">
+</div>
+
+<main>
+    <div class="home_row1">
+       <div class = "product" *ngFor="let product of products">
+          <p> {{product.description}}</p>
+          <div class="product_img_container">
+              <img [src]="product.image" [alt]="product.name">
+          </div>
+          <span> ₹ {{product.price}}</span>
+          <br>
+          <button (click)="addToCart(product.id,product.image,product.name,product.description,product.price)">Add to cart</button>
+       </div>
+    </div>
+
+    <div class="home_row2">
+     
+    </div>
+
+    <div class="home_row3">
+      <div class = "product" *ngFor="let product of productsRow2">
+        <p> {{product.description}}</p>
+        <div class="product_img_container">
+            <img [src]="product.image" [alt]="product.name">
+        </div>
+        <span> ₹ {{product.price}}</span>
+        <br>
+        <button (click)="addToCart(product.id,product.image,product.name,product.description,product.price)">Add to cart</button>
+     </div>
+    </div>
+</main>
+
